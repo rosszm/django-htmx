@@ -1,0 +1,30 @@
+{% load pipeline %}
+{% load django_htmx %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if title %}{{ title }} | {{ project }}{% else %}{{ project }}{% endif %}</title>
+  <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
+
+  {# Include HTMX scripts #}
+  {% javascript 'htmx' %}
+  {% django_htmx_script %}
+
+  {# Include Spectre CSS framework #}
+  {% stylesheet 'spectre' %}
+
+  {# Allow additional JS and CSS assets to be included on a page. #}
+  {% block js %}{% endblock %}
+  {% block css %}{% endblock %}
+</head>
+<body>
+  {# The navigation block includes the site navigation such as a navbar or side menu #}
+  {% block navigation %}{% endblock %}
+  {# The content block contains the main site/page content #}
+  {% block content %}{% endblock %}
+</body>
+</html>

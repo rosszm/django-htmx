@@ -1,0 +1,17 @@
+{
+  "name": "project",
+  "version": "0.1.0",
+  "description": "",
+  "contributors": [
+    {
+      "name": "Your Name",
+      "email": "you@example.com"
+    }
+  ],
+  "readme": "README.md",
+  "private": true,
+  "dependencies": {
+    "htmx.org": "^1.9.5",
+    "spectre.css": "^0.5.9"
+  }
+}
